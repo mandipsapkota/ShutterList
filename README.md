@@ -1,5 +1,5 @@
 ```
-Note : This app under prcoess. The readme is also not complete as of now.
+Note : This app under process. The readme is also not complete as of now.
 ```
 
 # ShutterList- Intro
