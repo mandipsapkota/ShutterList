@@ -1,17 +1,43 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Session for Auth in passport -- Created by me
+var expressSession = require("express-session");
+const passport = require('passport');
+const flash = require("connect-flash");
+
+//Env setup 
+
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./models/users');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
+app.use(flash());
+
+// Session for Auth in passport -- Created by me
+app.use(expressSession({
+  resave:false , 
+  saveUninitialized:false,
+  secret:'Hahahahahahahahaaaaaaaaaaaaaaaaaaaaaaa'
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(usersRouter.serializeUser());
+passport.deserializeUser(usersRouter.deserializeUser());
+
+// Done ------------------------------------------
 
 app.use(logger('dev'));
 app.use(express.json());
