@@ -1,5 +1,5 @@
 ```
-Note : This app under proess.
+Note : This app under prcoess. The readme is also not complete as of now.
 ```
 
 # ShutterList- Intro
@@ -17,7 +17,7 @@ Associating data of one model to others by using id is data association. Data cr
 
 # Notes for me
 
-Steps I followed . 
+Steps to follow . 
 
 ## 1. Create a / route with login and Signup.
 ## 2. /profile to see saved posts
